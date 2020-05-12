@@ -1,22 +1,7 @@
 
 <?php
 require_once("inc/functions.php");
-// require_once("inc/conn.php");
-// header('Access-Control-Allow-Origin: https://namrata-shakya.myshopify.com');
-$servername = "localhost";
-$username = "id13653806_root";
-$password = "T<6W~xug<&S4{t<";
-$database = "id13653806_scrap_product";
-// $database = "";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
+require_once("inc/conn.php");
 
 $requests = $_GET;
 $hmac = $_GET['hmac'];
@@ -33,26 +18,6 @@ $shop = $subdomain;
 $token = ""; //access token 
 // $token = "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"; //access token 
 $shopUrl='namrata-shakya.myshopify.com'; //shop-url
-
-
-?>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<div class="container">
-<h3>New Product Add</h3>
-<form method="GET" action="" >
-<lable>For Add New products :- </lable>
-<button type="button" value='1' name="btnA" class="btn btn-primary">click Here</button>
-    </form><br><br><br>
-</div>
-<?php
- if(isset($_GET['btnA'])){
-    $ab= $_GET['btnA'];
-     echo $ab;
-     
- }
-
-
-
 
 class ProductCreation
 {
