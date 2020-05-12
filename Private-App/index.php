@@ -15,8 +15,7 @@ $subdomain = $host[0];
 
 $shop = $subdomain;
 
-$token = ""; //access token 
-// $token = "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"; //access token 
+$token = "token"; //access token  
 $shopUrl='namrata-shakya.myshopify.com'; //shop-url
 
 class ProductCreation
@@ -67,7 +66,7 @@ class ProductCreation
 		                     ),
 			            );
 
-		$product = shopify_call($token, "16f89112bea5764363b9e22f8f3750bd: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@namrata-shakya", "/admin/api/2020-04/products.json", json_encode($productArr), 'POST',array("Content-Type: application/json"));
+		$product = shopify_call($token, "{apikey}:{password}@{hostname}", "/admin/api/2020-04/products.json", json_encode($productArr), 'POST',array("Content-Type: application/json"));
 	print_r($product);    
         $product = json_decode($product['response'], JSON_PRETTY_PRINT);
     
